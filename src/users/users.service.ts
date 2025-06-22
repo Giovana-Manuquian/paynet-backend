@@ -13,12 +13,17 @@ export class UsersService {
     return createdUser.save();
   }
 
-  async findAll(): Promise<User[]> {
-    return this.userModel.find().select('-password'); // Oculta senha
-  }
+ async findAll(): Promise<any[]> {
+  const users = await this.userModel.find().select('-password').lean();
+  return users.map(user => ({
+    ...user,
+    fullName: user.nome, // <-- converte 'nome' para 'fullName'
+  }));
+}
+
 
   async findByEmail(email: string): Promise<User | null> {
-    return this.userModel.findOne({ email });
+    return this.userModel.findOne({ email }).lean().exec();
   }
 
   async findById(id: string): Promise<User | null> {

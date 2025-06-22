@@ -10,6 +10,13 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, "..", "src", "views"));
   app.setViewEngine("ejs");
 
+  // Habilita CORS para o frontend no localhost:8080
+  app.enableCors({
+    origin: "http://localhost:8080", // ou '*' para liberar geral (não recomendado)
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    credentials: true,
+  });
+
   await app.listen(3000);
 }
 void bootstrap();

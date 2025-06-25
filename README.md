@@ -1,98 +1,121 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  Um framework progressivo em <a href="http://nodejs.org" target="_blank">Node.js</a> para construir aplicações backend eficientes e escaláveis.
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="Versão NPM" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Licença" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="Downloads NPM" /></a>
+  <a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Seguir" alt="Siga no Twitter"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Descrição do Projeto
 
-## Project setup
+Este projeto foi desenvolvido como tarefa para um processo seletivo de Node.js, utilizando o framework NestJS para criar uma API backend com autenticação via JWT.
 
-```bash
-$ npm install
-```
+### Funcionalidades principais
 
-## Compile and run the project
+- **Página de Cadastro:**
+  - Campos: nome completo, e-mail, senha, confirmar senha e endereço (Rua, Bairro, Número, Cidade, Estado, CEP).
+  - Validação do CEP com integração a API externa para busca automática dos dados do endereço.
+- **Página de Login:**
+  - Campos: e-mail e senha.
+- **Página de Recuperação de Senha:**
+  - Campo: e-mail para envio de link ou código de recuperação.
+- **Página Home:**
+  - Listagem de todos os usuários cadastrados no sistema.
 
-```bash
-# development
-$ npm run start
+### Comunicação Frontend-Backend
 
-# watch mode
-$ npm run start:dev
+- Comunicação via AJAX.
+- Autenticação via tokens JWT.
 
-# production mode
-$ npm run start:prod
-```
+### Arquitetura e Tecnologias
 
-## Run tests
+- Segue os princípios de design SOLID.
+- Utiliza **services**, **models** e **controllers** para organização do código.
+- Implementa um **provider** para integração com API de busca de endereço via CEP.
+- Banco de dados MongoDB para persistência dos dados.
 
-```bash
-# unit tests
-$ npm run test
+---
 
-# e2e tests
-$ npm run test:e2e
+## Pré-requisitos
 
-# test coverage
-$ npm run test:cov
-```
+- Node.js versão 18 ou superior
+- npm (gerenciador de pacotes)
+- MongoDB configurado e rodando localmente ou remotamente
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+## Instalação
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Clone o repositório e instale as dependências:
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+bash
+git clone https://github.com/Giovana-Manuquian/paynet-backend.git
+cd paynet-backend
+npm install
+Configuração
+Configure as variáveis de ambiente necessárias, criando um arquivo .env na raiz do projeto:
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+env
+Copiar
+Editar
+MONGODB_URI=mongodb://localhost:27017/paynet
+JWT_SECRET=seusegredoaqui
+PORT=3000
+Altere conforme sua configuração.
 
-## Resources
+Execução
+Para rodar o backend em modo desenvolvimento com reload automático:
 
-Check out a few resources that may come in handy when working with NestJS:
+bash
+Copiar
+Editar
+npm run start:dev
+Para rodar em modo normal (produção ou desenvolvimento):
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+bash
+Copiar
+Editar
+npm run start
+Para rodar em modo produção:
 
-## Support
+bash
+Copiar
+Editar
+npm run start:prod
+Testes
+Rodar testes unitários:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+bash
+Copiar
+Editar
+npm run test
+Rodar testes end-to-end:
 
-## Stay in touch
+bash
+Copiar
+Editar
+npm run test:e2e
+Gerar relatório de cobertura de testes:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+bash
+Copiar
+Editar
+npm run test:cov
+Deploy
+Para deploy em produção, consulte a documentação oficial do NestJS:
 
-## License
+Deploy NestJS
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Também pode usar a plataforma oficial de deploy NestJS (AWS):
+
+bash
+Copiar
+Editar
+npm install -g @nestjs/mau
+mau deploy

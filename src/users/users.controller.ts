@@ -10,6 +10,6 @@ export class UsersController {
   @Get()
   async findAll() {
     const users = await this.usersService.findAll();
-    return { users };  // retorna objeto com chave 'users'
+    return { users }; 
   }
 }

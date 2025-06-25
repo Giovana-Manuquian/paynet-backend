@@ -3,8 +3,11 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { join } from "path";
+import * as dotenv from 'dotenv';
 
 async function bootstrap() {
+  dotenv.config();
+  
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.setBaseViewsDir(join(__dirname, "..", "src", "views"));
@@ -12,7 +15,7 @@ async function bootstrap() {
 
   // Habilita CORS para o frontend no localhost:8080
   app.enableCors({
-    origin: "http://localhost:8080", // ou '*' para liberar geral (não recomendado)
+    origin: "http://localhost:8080",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     credentials: true,
   });

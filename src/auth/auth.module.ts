@@ -5,7 +5,8 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { UsersModule } from '../users/users.module';
-import { CepModule } from '../cep/cep.module'; // ✅ Importado corretamente
+import { CepModule } from '../cep/cep.module';
+import { EmailModule } from '../email/email.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { CepModule } from '../cep/cep.module'; // ✅ Importado corretamente
       secret: process.env.JWT_SECRET || 'jwt_secret_key',
       signOptions: { expiresIn: '1d' },
     }),
-    CepModule, // ✅ Adicionado aos imports
+    CepModule,
+    EmailModule,
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],

@@ -1,6 +1,4 @@
-<p align="center">
-  Um framework progressivo em <a href="http://nodejs.org" target="_blank">Node.js</a> para construir aplicações backend eficientes e escaláveis.
-</p>
+# Paynet Backend
 
 <p align="center">
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="Versão NPM" /></a>
@@ -50,72 +48,39 @@ Este projeto foi desenvolvido como tarefa para um processo seletivo de Node.js, 
 
 ---
 
-## Instalação
+## Instalação, Configuração, Execução, Testes e Deploy
 
-Clone o repositório e instale as dependências:
-
-bash
+```bash
 git clone https://github.com/Giovana-Manuquian/paynet-backend.git
 cd paynet-backend
 npm install
-Configuração
-Configure as variáveis de ambiente necessárias, criando um arquivo .env na raiz do projeto:
 
-env
-Copiar
-Editar
-MONGODB_URI=mongodb://localhost:27017/paynet
-JWT_SECRET=seusegredoaqui
-PORT=3000
-Altere conforme sua configuração.
+# Crie o arquivo .env com o conteúdo abaixo:
+echo "MONGODB_URI=mongodb://localhost:27017/paynet" >> .env
+echo "JWT_SECRET=seusegredoaqui" >> .env
+echo "PORT=3000" >> .env
 
-Execução
-Para rodar o backend em modo desenvolvimento com reload automático:
-
-bash
-Copiar
-Editar
+# Para rodar o backend em modo desenvolvimento com reload automático:
 npm run start:dev
-Para rodar em modo normal (produção ou desenvolvimento):
 
-bash
-Copiar
-Editar
+# Para rodar em modo normal (produção ou desenvolvimento):
 npm run start
-Para rodar em modo produção:
 
-bash
-Copiar
-Editar
+# Para rodar em modo produção:
 npm run start:prod
-Testes
-Rodar testes unitários:
 
-bash
-Copiar
-Editar
+# Rodar testes unitários:
 npm run test
-Rodar testes end-to-end:
 
-bash
-Copiar
-Editar
+# Rodar testes end-to-end:
 npm run test:e2e
-Gerar relatório de cobertura de testes:
 
-bash
-Copiar
-Editar
+# Gerar relatório de cobertura de testes:
 npm run test:cov
-Deploy
-Para deploy em produção, consulte a documentação oficial do NestJS:
 
-Deploy NestJS
+# Deploy - para deploy em produção, consulte a documentação oficial do NestJS:
+# https://docs.nestjs.com/cli/monorepo#deployment
 
-Também pode usar a plataforma oficial de deploy NestJS (AWS):
-
-bash
-Copiar
-Editar
+# Também pode usar a plataforma oficial de deploy NestJS (AWS):
 npm install -g @nestjs/mau
 mau deploy
